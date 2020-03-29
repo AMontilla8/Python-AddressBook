@@ -15,7 +15,7 @@ class Contact(BaseModel):
     YState = CharField()
 
 db.connect()
-db.create_tables([Contact])
+db.drop_tables([Contact])
 db.create_tables([Contact])
 # Anderson = Contact(firstname='Anderson',lastname='Montilla', phonenumber='2406032924',state='VA')
 # Anderson.save()
@@ -23,13 +23,13 @@ db.create_tables([Contact])
 def Start():
     print("AddressBook:\n Type 'list' to show all your contacts\n Type 'del' to delete a contact \n Type 'new' to make a new contact \n Type 'update' to update a contac")
     first = input('What Would you like to do: ')
-    if first == "list":
+    if first == 'list':
         info()
-    elif first == "del":
+    elif first == 'del':
         delete()
-    elif first == "new":
+    elif first == 'new':
         newContact()
-    elif first == "update":
+    elif first == 'update':
         update()
     else:
         exit()
@@ -39,10 +39,10 @@ def info():
     contacts = Contact.select()
     for contact in contacts:
         print(f"Name: {contacts.firstname} {contacts.lastname}\n Phone: {contacts.phonenumber}\n State: {contacts.YState}\n" )
-    list = input("Here is the List of Contacts. Would you like to go back to the home page? y/n: ")
-    if list == "y":
+    ilist = input("Here is the List of Contacts. Would you like to go back to the home page? y/n: ")
+    if ilist == 'y':
         Start()
-    contact = Contact.get(Contact.firstname == show)
+    contact = Contact.get(Contact.firstname == ilist)
     print(f"Name: {contacts.firstname} {contacts.lastname}\n Phone: {contacts.phonenumber}\n State: {contacts.YState}\n" )
     info()
         
@@ -64,7 +64,7 @@ def newContact():
     new_firstName = input('Insert First Name: ')
     new_lastName = input('Insert Last Name: ')
     new_phone = input('Insert Phone Number: ')
-    new_state = input('Insert State')
+    new_state = input('Insert State: ')
 
     add_contact = Contact(
         firstname = new_firstName,
