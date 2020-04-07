@@ -15,10 +15,10 @@ You are also able to see all the contacts you have strored.
 
 * **Anderson Guerrero** - *agmontilla08@gmail.com* 
 
-
 ## Installation
 
 * Fork and clone this Repository
+
 *Install this dependencies in your command line
 ```bash
 pip install peewee
@@ -26,7 +26,9 @@ pip install psychopg2
 ```
 *Create a database usig PostgreSQL 
 * Create a Database named contacts;
+
 *Run the program in the command line
+
 *```python3 app.py```
 
 
