@@ -29,8 +29,9 @@ pip install psychopg2
 
 *Run the program in the command line
 
-*```python3 app.py```
-
+```bash
+python3 app.py
+```
 
 
 
